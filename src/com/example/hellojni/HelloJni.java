@@ -33,7 +33,7 @@ public class HelloJni extends Activity
          * function.
          */
         TextView  tv = new TextView(this);
-        tv.setText( getserial() +" model:"+getModel());
+        tv.setText( "serial:"+getserial() +"\nmodel:"+getModel()+"\nbrand:"+getbrand()+"\nmac:"+getMac());
         setContentView(tv);
     }
 

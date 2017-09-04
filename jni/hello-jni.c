@@ -17,6 +17,10 @@
 #include <string.h>
 #include <stdio.h>
 #include <jni.h>
+#include <sys/socket.h>
+#include <linux/sockios.h>
+#include <linux/if.h>
+#include <linux/in.h>
 #include <sys/system_properties.h>
 
 
@@ -30,6 +34,8 @@ char * getfilemac();
 char * getAndroid_MODEL();
 char * getAndroid_BRAND();
 char * getAndroidDeviceID_Serial();
+char * getMac2();
+int get_mac_addr(char *mac_addr);
 jstring
 Java_com_example_hellojni_HelloJni_stringFromJNI( JNIEnv* env,
                                                   jobject thiz )
@@ -48,8 +54,7 @@ jstring
 Java_com_example_hellojni_HelloJni_getMac( JNIEnv* env,
                                                   jobject thiz )
 {
-	const char * mac = getfilemac();
-	const char * deviceID = getAndroidDeviceID_Serial();
+	const char * mac = getMac2();
     return (*env)->NewStringUTF(env, mac);
 }
 
@@ -109,30 +114,33 @@ char * getfilemac(){
 	}
 	return "null=="+(fp==NULL);
 }
-//JNIEXPORT jstring JNICALL Java_com_example_gnaix_ndk_NativeMethod_getString
-//        (JNIEnv *env, jclass object, jstring str){
-//
-//    //1. 将unicode编码的java字符串转换成C风格字符串
-//    const char *buf_name = env->GetStringUTFChars(str, 0);
-//    if(buf_name == NULL){
-//        return NULL;
-//    }
-//    int len = strlen(buf_name);
-//    char n_name[len];
-//    strcpy(n_name, buf_name);
-//
-//    //2. 释放内存
-//    env->ReleaseStringUTFChars(str, buf_name);
-//
-//    //3. 处理 n_name="ro.serialno"
-//    char buf[1024];
-//    __system_property_get(n_name, buf);
-//    LOGD("serialno : %s", buf);
-//
-//    //4. 去掉尾部"\0"
-//    int len_buf = strlen(buf);
-//    string result(buf, len_buf);
-//
-//    return env->NewStringUTF(result.c_str());
-//}
+
+char * getMac2(){
+	static char mac_addr[80] = {0};
+	printf( "MAC = %d, %s\n", get_mac_addr(mac_addr), mac_addr );
+	return mac_addr;
+}
+
+int get_mac_addr(char *mac_addr)
+{
+  int sockfd;
+  struct ifreq ifr;
+
+  if ((sockfd = socket(AF_INET, SOCK_DGRAM, IPPROTO_IP)) >= 0) {
+    //strncpy(ifr.ifr_name, "eth0", IFNAMESIZE);
+    strncpy(ifr.ifr_name, "wlan0", IFNAMSIZ);
+
+    ifr.ifr_addr.sa_family = AF_INET;
+
+    if (ioctl(sockfd, SIOCGIFHWADDR, (char*) &ifr) == 0) {
+      sprintf(mac_addr, "%02X:%02X:%02X:%02X:%02X:%02X",
+              (unsigned char) ifr.ifr_ifru.ifru_hwaddr.sa_data[0], (unsigned char) ifr.ifr_ifru.ifru_hwaddr.sa_data[1],
+              (unsigned char) ifr.ifr_ifru.ifru_hwaddr.sa_data[2], (unsigned char) ifr.ifr_ifru.ifru_hwaddr.sa_data[3],
+              (unsigned char) ifr.ifr_ifru.ifru_hwaddr.sa_data[4], (unsigned char) ifr.ifr_ifru.ifru_hwaddr.sa_data[5]);
+      return 0;
+    }
+  }
+  /* error */
+  return -1;
+}
 

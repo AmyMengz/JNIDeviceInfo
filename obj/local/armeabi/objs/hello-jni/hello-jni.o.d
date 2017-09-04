@@ -19,6 +19,19 @@ F:/Work/Android/workSrc4/hello-jni//obj/local/armeabi/objs/hello-jni/hello-jni.o
  D:/ProgramFilesStudioSdk/NDK/platforms/android-3/arch-arm/usr/include/machine/kernel.h \
  D:/ProgramFilesStudioSdk/NDK/platforms/android-3/arch-arm/usr/include/sys/sysmacros.h \
  D:/ProgramFilesStudioSdk/NDK/platforms/android-3/arch-arm/usr/include/jni.h \
+ D:/ProgramFilesStudioSdk/NDK/platforms/android-3/arch-arm/usr/include/sys/socket.h \
+ D:/ProgramFilesStudioSdk/NDK/platforms/android-3/arch-arm/usr/include/linux/socket.h \
+ D:/ProgramFilesStudioSdk/NDK/platforms/android-3/arch-arm/usr/include/asm/socket.h \
+ D:/ProgramFilesStudioSdk/NDK/platforms/android-3/arch-arm/usr/include/asm/sockios.h \
+ D:/ProgramFilesStudioSdk/NDK/platforms/android-3/arch-arm/usr/include/linux/sockios.h \
+ D:/ProgramFilesStudioSdk/NDK/platforms/android-3/arch-arm/usr/include/linux/uio.h \
+ D:/ProgramFilesStudioSdk/NDK/platforms/android-3/arch-arm/usr/include/linux/if.h \
+ D:/ProgramFilesStudioSdk/NDK/platforms/android-3/arch-arm/usr/include/linux/hdlc/ioctl.h \
+ D:/ProgramFilesStudioSdk/NDK/platforms/android-3/arch-arm/usr/include/linux/in.h \
+ D:/ProgramFilesStudioSdk/NDK/platforms/android-3/arch-arm/usr/include/asm/byteorder.h \
+ D:/ProgramFilesStudioSdk/NDK/platforms/android-3/arch-arm/usr/include/linux/byteorder/little_endian.h \
+ D:/ProgramFilesStudioSdk/NDK/platforms/android-3/arch-arm/usr/include/linux/byteorder/swab.h \
+ D:/ProgramFilesStudioSdk/NDK/platforms/android-3/arch-arm/usr/include/linux/byteorder/generic.h \
  D:/ProgramFilesStudioSdk/NDK/platforms/android-3/arch-arm/usr/include/sys/system_properties.h
 
 D:/ProgramFilesStudioSdk/NDK/platforms/android-3/arch-arm/usr/include/string.h:
@@ -58,5 +71,31 @@ D:/ProgramFilesStudioSdk/NDK/platforms/android-3/arch-arm/usr/include/machine/ke
 D:/ProgramFilesStudioSdk/NDK/platforms/android-3/arch-arm/usr/include/sys/sysmacros.h:
 
 D:/ProgramFilesStudioSdk/NDK/platforms/android-3/arch-arm/usr/include/jni.h:
+
+D:/ProgramFilesStudioSdk/NDK/platforms/android-3/arch-arm/usr/include/sys/socket.h:
+
+D:/ProgramFilesStudioSdk/NDK/platforms/android-3/arch-arm/usr/include/linux/socket.h:
+
+D:/ProgramFilesStudioSdk/NDK/platforms/android-3/arch-arm/usr/include/asm/socket.h:
+
+D:/ProgramFilesStudioSdk/NDK/platforms/android-3/arch-arm/usr/include/asm/sockios.h:
+
+D:/ProgramFilesStudioSdk/NDK/platforms/android-3/arch-arm/usr/include/linux/sockios.h:
+
+D:/ProgramFilesStudioSdk/NDK/platforms/android-3/arch-arm/usr/include/linux/uio.h:
+
+D:/ProgramFilesStudioSdk/NDK/platforms/android-3/arch-arm/usr/include/linux/if.h:
+
+D:/ProgramFilesStudioSdk/NDK/platforms/android-3/arch-arm/usr/include/linux/hdlc/ioctl.h:
+
+D:/ProgramFilesStudioSdk/NDK/platforms/android-3/arch-arm/usr/include/linux/in.h:
+
+D:/ProgramFilesStudioSdk/NDK/platforms/android-3/arch-arm/usr/include/asm/byteorder.h:
+
+D:/ProgramFilesStudioSdk/NDK/platforms/android-3/arch-arm/usr/include/linux/byteorder/little_endian.h:
+
+D:/ProgramFilesStudioSdk/NDK/platforms/android-3/arch-arm/usr/include/linux/byteorder/swab.h:
+
+D:/ProgramFilesStudioSdk/NDK/platforms/android-3/arch-arm/usr/include/linux/byteorder/generic.h:
 
 D:/ProgramFilesStudioSdk/NDK/platforms/android-3/arch-arm/usr/include/sys/system_properties.h:

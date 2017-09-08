@@ -33,7 +33,8 @@ public class HelloJni extends Activity
          * function.
          */
         TextView  tv = new TextView(this);
-        tv.setText( "serial:"+getserial() +"\nmodel:"+getModel()+"\nbrand:"+getbrand()+"\nmac:"+getMac());
+        tv.setText( "serial:"+getserial() +"\nmodel:"+getModel()+"\nbrand:"+getbrand()+"\nmac:"+getMac()
+        		+"\nparm:"+getparm());
         setContentView(tv);
     }
 
@@ -45,6 +46,8 @@ public class HelloJni extends Activity
     public native String  getModel();
     public native String  getbrand();
     public native String  getMac();
+    public native String  getparm();
+    
 
     /* This is another native method declaration that is *not*
      * implemented by 'hello-jni'. This is simply to show that
